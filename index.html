@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blob & Block Battle</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game" width="1000" height="640"></canvas>
+
+  <div id="menu" class="overlay">
+    <div class="card">
+      <h1>Blob &amp; Block Battle</h1>
+      <p class="tag">Falling blocks vs. popping blobs. Mix and match.</p>
+
+      <form id="setup">
+        <div class="players">
+          <fieldset>
+            <legend>Player 1</legend>
+            <label>Mode
+              <select name="p1mode">
+                <option value="block">Blocks</option>
+                <option value="puyo">Blobs</option>
+              </select>
+            </label>
+            <label>Control
+              <select name="p1control">
+                <option value="human">Human</option>
+                <option value="cpu">CPU</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Player 2</legend>
+            <label>Mode
+              <select name="p2mode">
+                <option value="puyo">Blobs</option>
+                <option value="block">Blocks</option>
+              </select>
+            </label>
+            <label>Control
+              <select name="p2control">
+                <option value="cpu">CPU</option>
+                <option value="human">Human</option>
+                <option value="off">Off (solo)</option>
+              </select>
+            </label>
+          </fieldset>
+        </div>
+
+        <label class="diff">CPU difficulty
+          <select name="difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <button type="submit">Start</button>
+      </form>
+
+      <details>
+        <summary>Controls</summary>
+        <table>
+          <tr><th></th><th>Solo / vs CPU</th><th>P1 (2 humans)</th><th>P2 (2 humans)</th></tr>
+          <tr><td>Move</td><td>← → or A D</td><td>A D</td><td>← →</td></tr>
+          <tr><td>Soft drop</td><td>↓ or S</td><td>S</td><td>↓</td></tr>
+          <tr><td>Hard drop</td><td>Space or W</td><td>W</td><td>↑</td></tr>
+          <tr><td>Rotate ↻</td><td>↑ / X / E</td><td>E</td><td>.</td></tr>
+          <tr><td>Rotate ↺</td><td>Z / Q</td><td>Q</td><td>,</td></tr>
+          <tr><td>Hold (blocks)</td><td>C / Shift</td><td>Left Shift</td><td>Right Shift</td></tr>
+        </table>
+        <p class="small">P: pause · Esc: menu · Enter: rematch</p>
+      </details>
+
+      <p class="small">Clear lines or chain blobs to send garbage to your opponent. Attacks cancel incoming garbage first.</p>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/blockGame.js"></script>
+  <script src="js/puyoGame.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

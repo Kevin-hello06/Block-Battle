@@ -1,0 +1,87 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0a0d1a;
+  color: #e6e9f5;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 18, 0.72);
+  backdrop-filter: blur(3px);
+}
+.overlay.hidden { display: none; }
+
+.card {
+  background: #151b30;
+  border: 2px solid #2c3557;
+  border-radius: 14px;
+  padding: 28px 32px;
+  width: min(560px, 94vw);
+  max-height: 94vh;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+h1 { margin: 0 0 4px; font-size: 30px; text-align: center; }
+.tag { margin: 0 0 20px; text-align: center; color: #8a93b8; }
+
+.players { display: flex; gap: 14px; }
+fieldset {
+  flex: 1;
+  border: 1px solid #2c3557;
+  border-radius: 10px;
+  padding: 10px 14px 14px;
+}
+legend { padding: 0 6px; font-weight: 700; }
+
+label { display: block; margin-top: 8px; font-size: 14px; color: #b8bfdc; }
+select {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 7px 8px;
+  border-radius: 8px;
+  border: 1px solid #3a4470;
+  background: #0d1222;
+  color: #e6e9f5;
+  font-size: 15px;
+}
+.diff { margin-top: 14px; }
+
+button {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3f8cf0, #a85be0);
+  color: white;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
+
+details { margin-top: 18px; }
+summary { cursor: pointer; font-weight: 700; }
+table { width: 100%; margin-top: 10px; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 4px 6px; text-align: left; border-bottom: 1px solid #222a47; }
+th { color: #8a93b8; font-weight: 600; }
+.small { font-size: 13px; color: #8a93b8; margin: 12px 0 0; }
